@@ -19,7 +19,7 @@ const HeaderBannerContainer = styled.div`
 
 const Background = styled.div`
   width: 100%;
-  height: 100%;
+  height: fit-content;
   background-color: var(--LightGrayishCyan);
 `;
 
