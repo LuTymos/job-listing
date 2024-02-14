@@ -5,6 +5,7 @@ import VagaCard from "@/components/VagaCard";
 const ContainerVagas = styled.div`
   max-width: 1100px;
   margin: 0 auto;
+  padding: 76px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
