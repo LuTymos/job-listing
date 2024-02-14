@@ -1,5 +1,5 @@
 export interface iVagas {
-  id: number;
+  id?: number;
   company: string;
   logo: string;
   novo: boolean;

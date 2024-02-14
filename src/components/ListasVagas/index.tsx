@@ -21,7 +21,6 @@ function ListaVagas({ vagas }: ListaVagasProps) {
       {vagas.map((vaga) => (
         <VagaCard
           key={vaga.id}
-          id={vaga.id}
           company={vaga.company}
           logo={vaga.logo}
           novo={vaga.novo}

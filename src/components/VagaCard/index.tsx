@@ -103,7 +103,6 @@ const LineInfo = styled.div`
 `;
 
 function VagaCard({
-  id,
   company,
   logo,
   novo,
