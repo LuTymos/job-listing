@@ -4,8 +4,8 @@ import bgHeaderDesktop from "@/assets/images/bg-header-desktop.svg";
 import bgHeaderMobile from "@/assets/images/bg-header-mobile.svg";
 import vagas from "@/data/services/data.json";
 import ListaVagas from "@/components/ListasVagas";
-import { useState } from "react";
 import { FilterContextProvider } from "./data/context/FilterContext";
+import ListFilters from "./components/ListFilters/index.";
 
 const HeaderBannerContainer = styled.div`
   width: 100%;
@@ -31,6 +31,7 @@ function App() {
       <GlobalStyles />
       <FilterContextProvider>
         <HeaderBannerContainer />
+        <ListFilters />
         <ListaVagas vagas={vagas} />
       </FilterContextProvider>
     </Background>

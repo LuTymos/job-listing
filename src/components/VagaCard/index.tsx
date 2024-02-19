@@ -1,8 +1,6 @@
 import { iVagas } from "@/data/@types/iVagas";
 import styled from "styled-components";
 import ListTools from "../ListTools";
-import { useContext } from "react";
-import { FilterContext } from "@/data/context/FilterContext";
 
 const Card = styled.div<{ $featured?: boolean }>`
   max-width: 100%;
@@ -103,8 +101,6 @@ const LineInfo = styled.div`
     line-height: 24px;
   }
 `;
-
-function handleRole(value: string) {}
 
 function VagaCard({
   company,

@@ -1,15 +1,27 @@
-import React, { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
-export const FilterContext = createContext({
-  tools: [] as string[], // Defina o tipo de tools como um array de strings
+interface FilterContextProps {
+  tools: string[];
+  role: string;
+  level: string;
+  languages: string[];
+  setTools: (value: string[]) => void;
+  setRole: (value: string) => void;
+  setLevel: (value: string) => void;
+  setLanguages: (value: string[]) => void;
+  addFilter: (type: string, value: string | string[]) => void;
+}
+
+export const FilterContext = createContext<FilterContextProps>({
+  tools: [] as string[],
   role: "",
   level: "",
-  languages: [] as string[], // Defina o tipo de languages como um array de strings
-  setTools: (value: string[]) => {},
-  setRole: (value: string) => {},
-  setLevel: (value: string) => {},
-  setLanguages: (value: string[]) => {},
-  addFilter: (type: string, value: string | string[]) => {},
+  languages: [] as string[],
+  setTools: () => {},
+  setRole: () => {},
+  setLevel: () => {},
+  setLanguages: () => {},
+  addFilter: () => {},
 });
 
 interface ProviderProps {
@@ -17,10 +29,10 @@ interface ProviderProps {
 }
 
 export function FilterContextProvider({ children }: ProviderProps) {
-  const [tools, setTools] = useState<string[]>([]); // Defina o tipo de tools como um array de strings
+  const [tools, setTools] = useState<string[]>([]);
   const [role, setRole] = useState("");
   const [level, setLevel] = useState("");
-  const [languages, setLanguages] = useState<string[]>([]); // Defina o tipo de languages como um array de strings
+  const [languages, setLanguages] = useState<string[]>([]);
 
   const addFilter = (type: string, value: string | string[]) => {
     switch (type) {
