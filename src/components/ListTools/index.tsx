@@ -1,7 +1,10 @@
+import { FilterContext } from "@/data/context/FilterContext";
+import { useContext } from "react";
 import styled from "styled-components";
 
 interface ListContentProps {
   content: string[] | string;
+  type: string;
 }
 
 const Content = styled.div`
@@ -19,17 +22,28 @@ const Content = styled.div`
   }
 `;
 
-function ListContent({ content }: ListContentProps) {
+function ListContent({ content, type }: ListContentProps) {
+  const { addFilter } = useContext(FilterContext);
+
+  const handleItemClick = (value: string | string[]) => {
+    addFilter(type, value);
+  };
   return (
     <Content>
       {Array.isArray(content) ? (
         content.map((item, index) => (
-          <span key={index} className="aboutInfo">
+          <span
+            key={index}
+            className="aboutInfo"
+            onClick={() => handleItemClick(item)}
+          >
             {item}
           </span>
         ))
       ) : (
-        <span className="aboutInfo">{content}</span>
+        <span className="aboutInfo" onClick={() => handleItemClick(content)}>
+          {content}
+        </span>
       )}
     </Content>
   );

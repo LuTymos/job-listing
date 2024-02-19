@@ -1,6 +1,8 @@
 import { iVagas } from "@/data/@types/iVagas";
 import styled from "styled-components";
 import VagaCard from "@/components/VagaCard";
+import { useContext } from "react";
+import { FilterContext } from "@/data/context/FilterContext";
 
 const ContainerVagas = styled.div`
   max-width: 1100px;
@@ -16,9 +18,31 @@ interface ListaVagasProps {
 }
 
 function ListaVagas({ vagas }: ListaVagasProps) {
+  const { tools, role, level, languages } = useContext(FilterContext);
+
+  // Função para verificar se algum filtro está aplicado
+  const isFilterApplied =
+    tools.length > 0 || role || level || languages.length > 0;
+
+  // Função para filtrar as vagas com base nos critérios
+  const filterVagas = (vaga: iVagas) => {
+    if (isFilterApplied) {
+      return (
+        (!tools.length || tools.every((tool) => vaga.tools.includes(tool))) &&
+        (!role || vaga.role === role) &&
+        (!level || vaga.level === level) &&
+        (!languages.length ||
+          languages.every((language) => vaga.languages.includes(language)))
+      );
+    }
+    return true; // Se nenhum filtro estiver aplicado, exibir todas as vagas
+  };
+
+  // Aplicar filtros e renderizar a lista
+  const filteredVagas = vagas.filter(filterVagas);
   return (
     <ContainerVagas>
-      {vagas.map((vaga) => (
+      {filteredVagas.map((vaga) => (
         <VagaCard
           key={vaga.id}
           company={vaga.company}
