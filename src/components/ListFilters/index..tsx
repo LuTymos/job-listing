@@ -2,16 +2,7 @@ import { FilterContext } from "@/data/context/FilterContext";
 import { useContext } from "react";
 
 function ListFilters() {
-  const {
-    tools,
-    role,
-    level,
-    languages,
-    setTools,
-    setRole,
-    setLevel,
-    setLanguages,
-  } = useContext(FilterContext);
+  const { tools, role, level, languages } = useContext(FilterContext);
   return (
     <div>
       {role}
