@@ -26,8 +26,10 @@ export function FilterContextProvider({ children }: ProviderProps) {
     switch (type) {
       case "tools":
         setTools((prevTools) => [
-          ...prevTools,
-          ...(Array.isArray(value) ? value : [value]),
+          ...new Set([
+            ...prevTools,
+            ...(Array.isArray(value) ? value : [value]),
+          ]),
         ]);
         break;
       case "role":
@@ -38,8 +40,10 @@ export function FilterContextProvider({ children }: ProviderProps) {
         break;
       case "languages":
         setLanguages((prevLanguages) => [
-          ...prevLanguages,
-          ...(Array.isArray(value) ? value : [value]),
+          ...new Set([
+            ...prevLanguages,
+            ...(Array.isArray(value) ? value : [value]),
+          ]),
         ]);
         break;
       default:
