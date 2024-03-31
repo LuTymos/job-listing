@@ -1,3 +1,4 @@
+import { validateHeaderValue } from "http";
 import { createContext, ReactNode, useState } from "react";
 
 interface FilterContextProps {
@@ -10,6 +11,7 @@ interface FilterContextProps {
   setLevel: (value: string) => void;
   setLanguages: (value: string[]) => void;
   addFilter: (type: string, value: string | string[]) => void;
+  removeFilter: (type: string, value: string | null) => void;
 }
 
 export const FilterContext = createContext<FilterContextProps>({
@@ -22,6 +24,7 @@ export const FilterContext = createContext<FilterContextProps>({
   setLevel: () => {},
   setLanguages: () => {},
   addFilter: () => {},
+  removeFilter: () => {},
 });
 
 interface ProviderProps {
@@ -62,6 +65,28 @@ export function FilterContextProvider({ children }: ProviderProps) {
         break;
     }
   };
+
+  const removeFilter = (type: string, value: string | null) => {
+    switch (type) {
+      case "tools":
+        let newTools = tools.filter((item) => item !== value);
+        setTools(newTools);
+        break;
+      case "role":
+        setRole("");
+        break;
+      case "level":
+        setLevel("");
+        break;
+      case "languages":
+        let newLanguages = languages.filter((item) => item !== value);
+        setLanguages(newLanguages);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <FilterContext.Provider
       value={{
@@ -74,6 +99,7 @@ export function FilterContextProvider({ children }: ProviderProps) {
         setLevel,
         setLanguages,
         addFilter,
+        removeFilter,
       }}
     >
       {children}
