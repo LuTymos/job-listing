@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+Job Listing
+Um desafio para construir uma página inicial de listagem de empregos, onde os usuários podem filtrar listagens com base nas categorias selecionadas, visualizar o layout responsivo para diferentes tamanhos de tela e interagir com estados de hover e foco para elementos na página.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Começando
 
-Currently, two official plugins are available:
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste. Consulte Implantação para saber como implantar o projeto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📋 Pré-requisitos
 
-## Expanding the ESLint configuration
+Para instalar o software, você precisa das seguintes ferramentas:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Node.js
+npm (gerenciador de pacotes do Node.js)
+Para instalá-las, você pode seguir os seguintes passos:
 
-- Configure the top-level `parserOptions` property like this:
+Baixe e instale o Node.js a partir do site oficial.
+Após a instalação do Node.js, o npm será instalado automaticamente.
+🔧 Instalação
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Siga estas instruções para configurar o ambiente de desenvolvimento:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Clone o repositório para sua máquina local.
+No diretório do projeto, execute npm install para instalar as dependências.
+Após a conclusão da instalação, execute npm start para iniciar o servidor de desenvolvimento.
+📦 Implantação
+
+Adicione notas adicionais sobre como implantar isso em um sistema ativo.
+
+🛠️ Construído com
+
+React
+Styled-Components
+Typescript
