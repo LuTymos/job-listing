@@ -3,7 +3,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 
 const FilterContainer = styled.div`
-  max-width: 1100px;
+  max-width: 1148px;
   margin: 0 auto;
   padding: 0 24px;
   margin-top: -36px;
@@ -17,6 +17,7 @@ const FilterContent = styled.div`
   min-width: 154px;
   padding: 20px 40px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 24px;
   -webkit-box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
