@@ -24,7 +24,8 @@ No diretório do projeto, execute npm install para instalar as dependências.
 Após a conclusão da instalação, execute npm start para iniciar o servidor de desenvolvimento.
 
 <h2>🛠️ Construído com</h2>
-
-React
-Styled-Components
-Typescript
+<ul>
+<li>React</li>
+<li>Styled-Components</li>
+<li>Typescript</li>
+</ul>
