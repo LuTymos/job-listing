@@ -29,3 +29,5 @@ Após a conclusão da instalação, execute npm start para iniciar o servidor de
 <li>Styled-Components</li>
 <li>Typescript</li>
 </ul>
+<h2>🛠Página do desafio</h2>
+https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt
