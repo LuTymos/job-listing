@@ -11,6 +11,9 @@ const ContainerVagas = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media screen and (max-width: 840px) {
+    gap: 48px;
+  }
 `;
 
 interface ListaVagasProps {

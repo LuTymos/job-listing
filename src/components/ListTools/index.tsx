@@ -10,6 +10,7 @@ interface ListContentProps {
 const Content = styled.div`
   display: flex;
   gap: 16px;
+
   .aboutInfo {
     color: #5ca5a5;
     background-color: rgba(92, 165, 165, 0.1);
@@ -19,6 +20,11 @@ const Content = styled.div`
     line-height: 24px;
     padding: 5px 8px 3px 8px;
     border-radius: 4px;
+    &:hover {
+      background-color: #5ca5a5;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 `;
 

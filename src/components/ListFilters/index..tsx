@@ -2,12 +2,20 @@ import { FilterContext } from "@/data/context/FilterContext";
 import { useContext } from "react";
 import styled from "styled-components";
 
+const FilterContainer = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-top: -36px;
+  box-sizing: border-box;
+`;
+
 const FilterContent = styled.div`
-  max-width: 100%;
   border-radius: 5px;
+  box-sizing: border-box;
   background-color: #ffffff;
   min-width: 154px;
-  padding: 32px 40px;
+  padding: 20px 40px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -39,6 +47,11 @@ const CloseButton = styled.div`
   align-items: center;
   background-color: #5ca5a5;
   color: #fff;
+  border-radius: 0 4px 4px 0;
+  &:hover {
+    background-color: #2b3939;
+    cursor: pointer;
+  }
 `;
 
 function ListFilters() {
@@ -54,47 +67,49 @@ function ListFilters() {
 
   if (isEmpty) {
     return (
-      <FilterContent>
-        {role != "" && (
-          <ItemFilter>
-            {role}
-            <CloseButton onClick={() => handleItemClick("role", null)}>
-              X
-            </CloseButton>
-          </ItemFilter>
-        )}
-
-        {level != "" && (
-          <ItemFilter>
-            {level}
-            <CloseButton onClick={() => handleItemClick("level", null)}>
-              X
-            </CloseButton>
-          </ItemFilter>
-        )}
-
-        {languages.length > 0 &&
-          languages.map((language) => (
+      <FilterContainer>
+        <FilterContent>
+          {role != "" && (
             <ItemFilter>
-              {language}
-              <CloseButton
-                onClick={() => handleItemClick("languages", language)}
-              >
+              {role}
+              <CloseButton onClick={() => handleItemClick("role", null)}>
                 X
               </CloseButton>
             </ItemFilter>
-          ))}
+          )}
 
-        {tools.length > 0 &&
-          tools.map((tool) => (
+          {level != "" && (
             <ItemFilter>
-              {tool}
-              <CloseButton onClick={() => handleItemClick("tools", tool)}>
+              {level}
+              <CloseButton onClick={() => handleItemClick("level", null)}>
                 X
               </CloseButton>
             </ItemFilter>
-          ))}
-      </FilterContent>
+          )}
+
+          {languages.length > 0 &&
+            languages.map((language) => (
+              <ItemFilter>
+                {language}
+                <CloseButton
+                  onClick={() => handleItemClick("languages", language)}
+                >
+                  X
+                </CloseButton>
+              </ItemFilter>
+            ))}
+
+          {tools.length > 0 &&
+            tools.map((tool) => (
+              <ItemFilter>
+                {tool}
+                <CloseButton onClick={() => handleItemClick("tools", tool)}>
+                  X
+                </CloseButton>
+              </ItemFilter>
+            ))}
+        </FilterContent>
+      </FilterContainer>
     );
   } else {
     return <></>;
